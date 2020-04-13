@@ -83,7 +83,73 @@ int TakeAngleFromCommand(String com)
 }
 void Reset()
 {
-  Podstawa.write(90);
+  if(Angle1>90)
+  {
+    for(int i=Angle1;i>90;i--)
+    {
+      Angle1-=1;
+      Podstawa.write(Angle1);
+      delay(50);
+    }
+    Angle1=90;
+    Podstawa.write(Angle1);
+  }
+  if(Angle1<90)
+  {
+    for(int i=Angle1;i<90;i++)
+    {
+      Angle1+=1;
+      Podstawa.write(Angle1);
+      delay(50);
+    }
+    Angle1=90;
+    Podstawa.write(Angle1);
+  }
+  if(Angle4>90)
+  {
+    for(int i=Angle4;i>90;i--)
+    {
+      Angle4-=1;
+      Uchwyt.write(Angle4);
+      delay(50);
+    }
+    Angle4=90;
+    Uchwyt.write(Angle4);
+  }
+  if(Angle4<90)
+  {
+    for(int i=Angle4;i<90;i++)
+    {
+      Angle4+=1;
+      Uchwyt.write(Angle4);
+      delay(50);
+    }
+    Angle4=90;
+    Uchwyt.write(Angle4);
+  }
+  if(Angle2>0)
+  {
+    for(int i=Angle2;i>0;i--)
+    {
+      Angle2-=1;
+      PierwszaCzescRamienia.write(Angle2);
+      delay(50);
+    }
+    Angle2=0;
+    PierwszaCzescRamienia.write(Angle2);
+  }
+  if(Angle3>0)
+  {
+    for(int i=Angle3;i>0;i--)
+    {
+      Angle3-=1;
+      DrugaCzescRamienia.write(Angle3);
+      delay(50);
+    }
+    Angle3=0;
+    DrugaCzescRamienia.write(Angle3);
+  }
+    Podstawa.write(90);
   PierwszaCzescRamienia.write(0);
   DrugaCzescRamienia.write(0);
   Uchwyt.write(90);
@@ -92,6 +158,7 @@ void Reset()
   Angle3=0;
   Angle4=90;
 }
+
 void RuszPodstawe(int kat, bool lewo)
 {
   
